@@ -1,3 +1,8 @@
 // Ajoute une pastille sur l'icône de l'extension
-chrome.browserAction.setBadgeText({ text: "ON" });
-chrome.browserAction.setBadgeBackgroundColor({ color: "#333" });
+fetch("http://devoweb-tools.test/api")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        console.log(data);
+    });
