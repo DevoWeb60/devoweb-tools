@@ -7,8 +7,11 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "32": "icons/32-devoweb.png"
+            "32": "src/icons/32-devoweb.png"
         }
+    },
+    "icons": {
+        "32": "src/icons/32-devoweb.png"
     },
     "background": {
         "service_worker": "background.js"

@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 
 DEFINE('username', 'root');
 DEFINE('password', 'root');
@@ -13,7 +14,7 @@ $favoris = $db->query('SELECT * FROM tools WHERE category_id = 2');
 $favoris = $favoris->fetchAll(PDO::FETCH_OBJ);
 
 $vscode = $db->query('SELECT * FROM tools WHERE category_id = 1');
-$vscode = $vscode->fetchAll();
+$vscode = $vscode->fetchAll(PDO::FETCH_OBJ);
 
 echo json_encode([
     'favoris' => $favoris,
