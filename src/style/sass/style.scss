@@ -1,0 +1,66 @@
+@import "./reset";
+
+$white: #fff;
+$black: #333;
+$primary: #ffba4b;
+
+$transition: 0.3s ease-in-out;
+
+html,
+body {
+    margin: 0;
+    width: 500px;
+    background: $white;
+    color: $black;
+    font-size: 18px;
+}
+h1 {
+    text-align: center;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    img {
+        width: 32px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+.sub-link {
+    display: block;
+    font-size: 18px;
+    transition: $transition;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0;
+
+    &:hover {
+        background: rgba($primary, 0.6);
+    }
+}
+
+.category {
+    margin: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: rgba($primary, 0.4);
+}
+
+.subcategory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

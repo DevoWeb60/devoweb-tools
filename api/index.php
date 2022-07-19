@@ -10,13 +10,17 @@ DEFINE('database', 'devoweb-tools');
 $db = new PDO('mysql:host=' . host . ';dbname=' . database . ';charset=utf8', username, password);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$favoris = $db->query('SELECT * FROM tools WHERE category_id = 2');
-$favoris = $favoris->fetchAll(PDO::FETCH_OBJ);
+$categories = $db->query('SELECT * FROM category');
+$categories = $categories->fetchAll(PDO::FETCH_OBJ);
 
-$vscode = $db->query('SELECT * FROM tools WHERE category_id = 1');
-$vscode = $vscode->fetchAll(PDO::FETCH_OBJ);
+$subcategories = $db->query('SELECT * FROM subcategory');
+$subcategories = $subcategories->fetchAll(PDO::FETCH_OBJ);
+
+$tools = $db->query('SELECT * FROM tools');
+$tools = $tools->fetchAll(PDO::FETCH_OBJ);
 
 echo json_encode([
-    'favoris' => $favoris,
-    'vscode' => $vscode
+    'categories' => $categories,
+    'subcategories' => $subcategories,
+    'tools' => $tools
 ]);
