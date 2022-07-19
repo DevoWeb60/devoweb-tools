@@ -5,15 +5,44 @@ $black: #333;
 $primary: #ffba4b;
 
 $transition: 0.3s ease-in-out;
-
+$popupWidth: 500px;
 html,
 body {
     margin: 0;
-    width: 500px;
+    width: $popupWidth;
     background: $white;
     color: $black;
     font-size: 18px;
 }
+
+.container {
+    width: calc($popupWidth * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: $transition;
+
+    &.active {
+        transform: translateX(-50%);
+
+        .category-container {
+            height: 0px;
+        }
+    }
+}
+.category-container,
+.tools-container {
+    width: calc($popupWidth - 20px);
+    margin: 0 auto;
+}
+#back {
+    text-transform: uppercase;
+    cursor: pointer;
+    i {
+        margin-right: 20px;
+    }
+}
+
 h1 {
     text-align: center;
 }
@@ -22,12 +51,12 @@ h2 {
     display: flex;
     align-items: center;
     text-transform: uppercase;
-
-    img {
-        width: 32px;
-        object-fit: cover;
-        margin-right: 20px;
-    }
+}
+img {
+    display: block;
+    width: 25px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
 ul li {
@@ -45,14 +74,21 @@ a {
     transition: $transition;
     cursor: pointer;
     padding: 10px 20px;
-    margin: 0;
+    margin: 10px 0;
+    background: rgba($white, 0.4);
+
+    h3 {
+        display: flex;
+        align-items: center;
+    }
 
     &:hover {
         background: rgba($primary, 0.6);
     }
 }
 
-.category {
+.category,
+.tools-lists {
     margin: 10px;
     padding: 20px;
     margin-bottom: 15px;
