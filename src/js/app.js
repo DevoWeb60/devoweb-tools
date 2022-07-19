@@ -13,17 +13,22 @@ function App(data) {
 
     Object.keys(data).forEach((category) => {
         const div = document.createElement("div");
+        div.className = "category";
         div.innerHTML += `<h2>${category}</h2>`;
-        div.innerHTML += `<ul>`;
+        div.innerHTML += `<div class="list ${category}">`;
         data[category].forEach((element) => {
-            div.innerHTML += `<li>
-            <h3>
-            <span><img src=${element.favicon} alt=""></span> 
-            ${element.name}
-            </h3>
-            </li>`;
+            div.innerHTML += `<div class="item">
+                <a href="${element.link}" target="_blank">
+                    <h3>
+                        <span>
+                            <img src=${element.favicon} alt="" />
+                        </span> 
+                        ${element.name}
+                    </h3>
+                </a>
+            </div>`;
         });
-        div.innerHTML += `</ul>`;
+        div.innerHTML += `</div>`;
         container.appendChild(div);
     });
 }
