@@ -59,15 +59,19 @@ body {
 }
 
 h1 {
+    text-transform: uppercase;
     text-align: center;
     color: $black;
     font-weight: 100;
+    font-size: 11vw;
 }
 
 h2 {
     @include flexAlign;
     text-transform: uppercase;
     font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 50px;
 
     img {
         width: 40px;
