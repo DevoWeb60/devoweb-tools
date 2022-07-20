@@ -1,6 +1,6 @@
 import { fetchData } from "./inc/functions.js";
 
-const API_URL = "http://devoweb-tools.test/api";
+const API_URL = "https://tools.devoweb.fr";
 
 function App(data) {
     const container = document.querySelector(".container");
