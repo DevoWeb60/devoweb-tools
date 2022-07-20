@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;900&display=swap");
 @import "./reset";
 
 $white: #fff;
@@ -6,13 +7,27 @@ $primary: #ffba4b;
 
 $transition: 0.3s ease-in-out;
 $popupWidth: 500px;
+
+@mixin flexAlign {
+    display: flex;
+    align-items: center;
+}
+
+@mixin container {
+    background: rgba($black, 0.6);
+    border: 2px solid rgba($black, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba($black, 0.3);
+}
 html,
 body {
     margin: 0;
     width: $popupWidth;
-    background: $white;
-    color: $black;
+    background: $primary;
+    color: $white;
     font-size: 18px;
+    line-height: 150%;
+    font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -45,12 +60,18 @@ body {
 
 h1 {
     text-align: center;
+    color: $black;
+    font-weight: 100;
 }
 
 h2 {
-    display: flex;
-    align-items: center;
+    @include flexAlign;
     text-transform: uppercase;
+    font-weight: 900;
+
+    img {
+        width: 40px;
+    }
 }
 img {
     display: block;
@@ -65,7 +86,11 @@ ul li {
 
 a {
     text-decoration: none;
-    color: $black;
+    color: $white;
+}
+
+p {
+    font-weight: 300;
 }
 
 .sub-link {
@@ -75,16 +100,22 @@ a {
     cursor: pointer;
     padding: 10px 20px;
     margin: 10px 0;
-    background: rgba($white, 0.4);
+    @include container;
 
     h3 {
-        display: flex;
-        align-items: center;
+        font-weight: 500;
+        @include flexAlign;
     }
 
     &:hover {
-        background: rgba($primary, 0.6);
+        background: rgba($white, 0.95);
+        border-color: $black;
+        color: $black;
     }
+}
+
+h3.sub-link {
+    font-weight: 500;
 }
 
 .category,
@@ -92,7 +123,7 @@ a {
     margin: 10px;
     padding: 20px;
     margin-bottom: 15px;
-    background: rgba($primary, 0.4);
+    @include container;
 }
 
 .subcategory {
